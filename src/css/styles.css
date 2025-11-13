@@ -378,10 +378,10 @@ h4 {
 }
 
 .partners__row img {
-  height: 40px;
-  width: auto;
+  height: auto;
+  width: 170px;
   object-fit: contain;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .hero__card {
@@ -838,5 +838,11 @@ h4 {
 
   .form-card {
     padding: var(--space-32);
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
