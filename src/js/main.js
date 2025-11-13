@@ -24,12 +24,11 @@ revealElements.forEach(el => el.classList.add('reveal--visible'));
 }
 
 // FAQ accordion
-const faqItems = document.querySelectorAll('.faq-item');
+const faqItems = document.querySelectorAll('.faq__item');
 
 faqItems.forEach(item => {
-const question = item.querySelector('.faq-question');
-const answer = item.querySelector('.faq-answer');
-const icon = item.querySelector('.faq-icon');
+const question = item.querySelector('.faq__question');
+const answer = item.querySelector('.faq__answer');
 if (!question || !answer) return;
 
 question.addEventListener('click', () => {
@@ -39,7 +38,7 @@ question.addEventListener('click', () => {
   faqItems.forEach(otherItem => {
     if (otherItem !== item) {
       otherItem.classList.remove('is-open');
-      const otherQuestion = otherItem.querySelector('.faq-question');
+      const otherQuestion = otherItem.querySelector('.faq__question');
       if (otherQuestion) {
         otherQuestion.setAttribute('aria-expanded', 'false');
       }
@@ -85,7 +84,7 @@ const nav = document.querySelector('.site-nav');
 
 const updateNavVisibility = () => {
 if (!nav) return;
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1024) {
 nav.style.display = '';
 } else {
 nav.style.display = 'none';
@@ -106,7 +105,7 @@ window.addEventListener('resize', updateNavVisibility);
 
 nav.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       nav.style.display = 'none';
     }
   });
