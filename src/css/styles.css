@@ -427,7 +427,7 @@ h4 {
 }
 
 .grid--3 {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid--4 {
@@ -509,7 +509,7 @@ h4 {
   box-shadow: 0 10px 40px rgba(13, 15, 39, 0.1);
   display: flex;
   flex-direction: column;
-  gap: var(--space-16);
+  gap: var(--space-8);
 }
 
 .speaker-card__photo {
@@ -519,14 +519,23 @@ h4 {
 
 .speaker-card__photo img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/4;
   object-fit: cover;
+	object-position: top center;
   filter: saturate(0.9) brightness(1);
+	margin-bottom: 10px;
 }
 
 .speaker-card__role {
   font-size: var(--body-s);
   color: rgba(11, 17, 32, 0.6);
+}
+
+.speaker-card h4 {
+	margin-bottom: 0;
+}
+.speaker-card .body-m {
+	margin-top: 5px;
 }
 
 /* Pricing */
@@ -721,7 +730,16 @@ h4 {
 }
 
 .btn--full {
-  width: 100%;
+	width: fit-content;
+	display: block;
+	margin-top: 28px;
+}
+
+.btn-custom {
+	cursor: pointer;
+	width: fit-content;
+	display: block;
+	margin-top: 28px;
 }
 
 /* CTA */
