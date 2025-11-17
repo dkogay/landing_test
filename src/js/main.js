@@ -113,39 +113,4 @@ nav.querySelectorAll('a[href^="#"]').forEach(link => {
 
 }
 
-// Registration form submit
-const form = document.getElementById('registration-form');
-const statusEl = document.getElementById('form-status');
-
-if (form && statusEl) {
-form.addEventListener('submit', async event => {
-event.preventDefault();
-statusEl.textContent = 'Отправляем заявку...';
-statusEl.classList.remove('form-status--success', 'form-status--error');
-  const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
-
-  try {
-    const response = await fetch('/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-      throw new Error('Request failed');
-    }
-
-    statusEl.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
-    statusEl.classList.add('form-status--success');
-    form.reset();
-  } catch (error) {
-    statusEl.textContent =
-      'Произошла ошибка при отправке. Попробуйте ещё раз позже.';
-    statusEl.classList.add('form-status--error');
-  }
-});
-}
 });
