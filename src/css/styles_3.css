@@ -122,6 +122,11 @@ main {
   overflow: hidden;
 }
 
+.logos {
+	display: flex;
+	gap: 15px;
+}
+
 .section--with-bg .section__bg {
   position: absolute;
   inset: 0;
