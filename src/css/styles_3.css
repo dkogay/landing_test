@@ -526,6 +526,11 @@ h4 {
 	margin-bottom: 10px;
 }
 
+.logos {
+	display: flex;
+	gap: 15px;
+}
+
 .speaker-card__role {
   font-size: var(--body-s);
   color: rgba(11, 17, 32, 0.6);
